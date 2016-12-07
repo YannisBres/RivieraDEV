@@ -10,12 +10,20 @@ nav a {
 
     @include transition(all 0.3s);
 
+    & .container-fluid{
+        background-color: $color-white;
+    }
+
+    &-logos {
+        margin-left: 0.5em;
+    }
+
     &-logo {
         @include transition(all 0.3s);
         height: $navbar-height;
         line-height: $navbar-height;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding: 0;
+        margin: 0;
         
         img {
             height: 100%;
@@ -137,6 +145,10 @@ ul.dropdown-menu > li.active > a {
         height: $navbar-small-height;
         line-height: $navbar-small-height;
     }
+
+    & .navbar-RedHat{
+        font-size: 0.8em;
+    }
 }
 
 .navbar .label-primary {
@@ -145,8 +157,33 @@ ul.dropdown-menu > li.active > a {
     background-color: $color-yellow;
 }
 
-
-// ----- Only on mobile ---------------------------------------------------------------------------
+.navbar{
+    &-rivieradev {
+        margin-right: 0.3em;
+    }
+    &-RedHat{
+        @include display-flex();
+        & img.navbar-RedHat--logo{
+            display: inline-block;
+            @include align-self(flex-end);
+            height: 2em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            margin-bottom: 0.25em;
+        }
+        &--featuring{
+            display: inline-block;
+            height: 1em;
+            line-height: 1em;
+            @include align-self(flex-end);
+            margin-bottom: 0.6em;
+        }
+    }
+}
+// To override bootstrap selector
+#navbar-RedHat{
+    margin-left: 0;
+}
 
 
 .navbar-fixed-top .navbar-collapse {
@@ -173,6 +210,7 @@ ul.dropdown-menu > li.active > a {
 
 }
 
+// ----- Only on mobile ---------------------------------------------------------------------------
 
 @media (max-width: $screen-md-min) {
 
@@ -183,6 +221,10 @@ ul.dropdown-menu > li.active > a {
     .navbar-fixed-top {
         position: inherit;
         margin-bottom: 0;
+
+        // Override bootstrap design
+        background-image: none;
+        background-color: $color-white;
     }
 
     .navbar-animated{
@@ -236,6 +278,11 @@ ul.dropdown-menu > li.active > a {
             border-color: $color-blue;
             color: $color-black-light;
         }
+    }
+
+    #navbar-RedHat{
+        font-size: 0.8em;
+        margin-left: 0;
     }
 
 }

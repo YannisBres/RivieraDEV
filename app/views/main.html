@@ -8,11 +8,18 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@RivieraDEV" />
+    <meta property="og:title" content="#{get 'title' /} - Riviera DEV" />
+    <meta property="og:type" content="image/svg+xml" />
+    <meta property="og:url" content="@@{Application.index}" />
+    <meta property="og:image" content="@@{'/public/images/logo_RD_black.svg'}" />
+
     <!-- Bootstrap -->
     <!-- Bootstrap has been customized to modify a variable :
          Point at which the navbar becomes uncollapsed => @grid-float-breakpoint = @screen-md-min
-         (http://getbootstrap.com/customize/) 
+         (http://getbootstrap.com/customize/)
     -->
     <link rel="stylesheet" href="@{'/public/bootstrap/3.3.7/css/bootstrap.min.css'}" >
     <link rel="stylesheet" href="@{'/public/bootstrap/3.3.7/css/bootstrap-theme.min.css'}" >
@@ -45,9 +52,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand navbar-animated-logo" href="@{Application.index}">
-                    <img src="@{'/public/images/logo_RD_black.svg'}" alt="RivieraDEV">
-                </a>
+                <div class="navbar-animated-logos">
+                    <a class="navbar-brand navbar-animated-logo navbar-rivieradev" href="@{Application.index}">
+                        <img src="@{'/public/images/logo_RD_black.svg'}" alt="RivieraDEV">
+                    </a>
+                    <a id="navbar-RedHat" class="navbar-brand navbar-animated-logo navbar-RedHat" href="@{Application.index}">
+                        <span class="navbar-RedHat--featuring">&{'views.main.logo.featuring'}</span><!-- Do not remove this comment
+                        --><img src="@{'/public/images/logos/Red_Hat_RGB.png'}" alt="Red Hat" class="navbar-RedHat--logo">
+                    </a>
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -116,12 +129,12 @@
 
     <footer class="footer container">
         <div class="row">
-            
+
             <div class="col-sm-5 footer-infos">
                 <div class="footer-logo">
                     <img src="@{'/public/images/logo_RD_white.svg'}" alt="RivieraDEV">
                 </div>
-                <div class="footer-slogan">La conférence du soleil</div>
+                <div class="footer-slogan">&{'views.main.motto'}</div>
                 <div class="footer-contact">
                     <span class="footer-contact-deco">{</span>
                     <span class="footer-contact-text">&{'views.main.contact'} info@rivieradev.fr</span>
@@ -168,11 +181,11 @@
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                     <span class="sr-only">Google +</span>
                 </a>
-                <a class="footer-rs-item footer-rs-instagram" href="#">
+                <a class="footer-rs-item footer-rs-instagram" href="https://www.instagram.com/rivieradevconf/">
                     <i class="fa fa-instagram" aria-hidden="true"></i>
                     <span class="sr-only">Instagram</span>
                 </a>
-                
+
             </div>
 
         </div>
@@ -191,7 +204,7 @@
     <!-- Bootstrap -->
     <!-- Bootstrap has been customized to modify a variable :
          Point at which the navbar becomes uncollapsed => @grid-float-breakpoint = @screen-md-min
-         (http://getbootstrap.com/customize/) 
+         (http://getbootstrap.com/customize/)
     -->
     <script src="@{'/public/bootstrap/3.3.7/js/bootstrap.min.js'}"></script>
 
@@ -209,10 +222,10 @@
     #{get 'moreScripts' /}
     <script type="text/javascript">
 
-        var countDownDaysLabel = "&{'tags.countdown.days'}"; 
-        var countDownHoursLabel = "&{'tags.countdown.hours'}"; 
-        var countDownMinutesLabel = "&{'tags.countdown.minutes'}"; 
-        var countDownSecondsLabel = "&{'tags.countdown.seconds'}"; 
+        var countDownDaysLabel = "&{'tags.countdown.days'}";
+        var countDownHoursLabel = "&{'tags.countdown.hours'}";
+        var countDownMinutesLabel = "&{'tags.countdown.minutes'}";
+        var countDownSecondsLabel = "&{'tags.countdown.seconds'}";
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-24807954-1']);
         _gaq.push(['_setDomainName', 'none']);
@@ -231,7 +244,6 @@
         });
 
     </script>
-    
+
 </body>
 </html>
-
